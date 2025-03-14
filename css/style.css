@@ -1,0 +1,454 @@
+/* 전체 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", "Roboto", sans-serif;
+  background-color: #202124;
+  color: #e8eaed;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 헤더 스타일 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #5f6368;
+  margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+  color: #8ab4f8;
+}
+
+#userInfo {
+  display: flex;
+  align-items: center;
+}
+
+#loginForm,
+#userProfile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 버튼 공통 스타일 */
+button {
+  background-color: #8ab4f8;
+  color: #202124;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #aecbfa;
+}
+
+button:disabled {
+  background-color: #5f6368;
+  cursor: not-allowed;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #5f6368;
+  background-color: #303134;
+  color: #e8eaed;
+}
+
+/* 섹션 스타일 */
+.section {
+  background-color: #303134;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 로비 스타일 */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#roomList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.room-card {
+  background-color: #3c4043;
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #5f6368;
+}
+
+.room-card h3 {
+  margin-bottom: 10px;
+}
+
+.room-card .room-details {
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  color: #bdc1c6;
+}
+
+.empty-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  color: #9aa0a6;
+}
+
+/* 게임룸 스타일 */
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.room-info {
+  display: flex;
+  gap: 20px;
+}
+
+/* 포커 테이블 */
+#pokerTable {
+  position: relative;
+  width: 100%;
+  background-color: #076324;
+  border-radius: 150px;
+  height: 500px;
+  margin: 20px 0;
+  border: 15px solid #3c1f0a;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#communityCards {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 80px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #000;
+  position: relative;
+}
+
+.card.red {
+  color: #d32f2f;
+}
+
+.card-symbol {
+  font-size: 30px;
+}
+
+.card-value {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-back {
+  background-color: #3c4043;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #444,
+    #444 10px,
+    #555 10px,
+    #555 20px
+  );
+}
+
+#potInfo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #fff;
+}
+
+#players {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.player-position {
+  position: absolute;
+  width: 150px;
+  text-align: center;
+}
+
+/* 플레이어 위치 */
+.player-position:nth-child(1) {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.player-position:nth-child(2) {
+  top: 25%;
+  left: 85%;
+}
+.player-position:nth-child(3) {
+  top: 60%;
+  left: 85%;
+}
+.player-position:nth-child(4) {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.player-position:nth-child(5) {
+  top: 60%;
+  left: 15%;
+}
+.player-position:nth-child(6) {
+  top: 25%;
+  left: 15%;
+}
+
+.player-area {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.player-cards {
+  display: flex;
+  gap: 5px;
+}
+
+.player-cards .card {
+  width: 60px;
+  height: 90px;
+  font-size: 16px;
+}
+
+.player-action {
+  background-color: #8ab4f8;
+  color: #202124;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+#myPlayer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+}
+
+/* 게임 컨트롤 */
+.control-area {
+  margin-top: 20px;
+}
+
+#actionBtns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.action-btn {
+  min-width: 80px;
+}
+
+#betControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#betSlider {
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+#betAmount {
+  width: 100px;
+}
+
+/* 게임 상태 영역 */
+.status-area {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#timer {
+  background-color: #8ab4f8;
+  color: #202124;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#gameMessage {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 모달 스타일 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #303134;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal h3 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 푸터 스타일 */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #9aa0a6;
+  font-size: 14px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  #roomList {
+    grid-template-columns: 1fr;
+  }
+
+  .room-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  #actionBtns {
+    flex-wrap: wrap;
+  }
+
+  #pokerTable {
+    height: 400px;
+    border-radius: 100px;
+  }
+
+  .player-position:nth-child(1) {
+    top: 5%;
+  }
+  .player-position:nth-child(2) {
+    top: 25%;
+    left: 80%;
+  }
+  .player-position:nth-child(3) {
+    top: 60%;
+    left: 80%;
+  }
+  .player-position:nth-child(5) {
+    top: 60%;
+    left: 20%;
+  }
+  .player-position:nth-child(6) {
+    top: 25%;
+    left: 20%;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "multiplayer-poker-game",
+  "description": "PHP 기반 멀티플레이어 포커 게임",
+  "type": "project",
+  "require": {
+    "php": ">=7.0",
+    "cboden/ratchet": "^0.4.4"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Poker Game Developer",
+      "email": "example@example.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}

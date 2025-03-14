@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplayer Poker Game</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Online Poker Game</h1>
+        <div id="userInfo">
+          <div id="loginForm">
+            <input type="text" id="username" placeholder="Username" />
+            <button id="loginBtn">Login</button>
+          </div>
+          <div id="userProfile" class="hidden">
+            <span id="displayName"></span>
+            <span id="userMoney"></span>
+            <button id="logoutBtn">Logout</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div id="lobby" class="section">
+          <h2>Game Lobby</h2>
+          <div class="controls">
+            <button id="createRoomBtn">Create Room</button>
+            <button id="refreshRoomsBtn">Refresh</button>
+          </div>
+          <div id="roomList">
+            <!-- Room list will be dynamically loaded here -->
+            <p class="empty-message">
+              No game rooms available. Create a new room!
+            </p>
+          </div>
+        </div>
+
+        <div id="gameRoom" class="section hidden">
+          <div class="room-header">
+            <h2 id="roomName">Room Name</h2>
+            <div class="room-info">
+              <span id="roomPlayers">Players: 0/8</span>
+              <span id="blindInfo">Blinds: 10/20</span>
+            </div>
+            <button id="leaveRoomBtn">Leave Room</button>
+          </div>
+
+          <div id="pokerTable">
+            <div id="communityCards" class="card-area">
+              <!-- Community cards will be displayed here -->
+            </div>
+
+            <div id="potInfo">
+              <span id="potAmount">Pot: ₩0</span>
+            </div>
+
+            <div id="players">
+              <!-- Players will be dynamically added here -->
+            </div>
+
+            <div id="myPlayer" class="player-area">
+              <div class="player-info">
+                <span class="player-name">Me</span>
+                <span class="player-money">₩1000</span>
+              </div>
+              <div class="player-cards">
+                <!-- My cards will be displayed here -->
+              </div>
+            </div>
+          </div>
+
+          <div id="gameControls" class="control-area">
+            <div id="actionBtns">
+              <button id="foldBtn" class="action-btn">Fold</button>
+              <button id="checkBtn" class="action-btn">Check</button>
+              <button id="callBtn" class="action-btn">Call</button>
+              <button id="betBtn" class="action-btn">Bet</button>
+              <button id="raiseBtn" class="action-btn">Raise</button>
+            </div>
+            <div id="betControls">
+              <input type="range" id="betSlider" min="0" max="1000" value="0" />
+              <input type="number" id="betAmount" value="0" />
+            </div>
+          </div>
+
+          <div id="gameStatus" class="status-area">
+            <div id="timer">Time left: 30 seconds</div>
+            <div id="gameMessage">Game messages will be displayed here</div>
+          </div>
+        </div>
+      </main>
+
+      <div id="createRoomModal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Create New Game Room</h3>
+          <form id="createRoomForm">
+            <div class="form-group">
+              <label for="newRoomName">Room Name:</label>
+              <input type="text" id="newRoomName" required />
+            </div>
+            <div class="form-group">
+              <label for="maxPlayers">Maximum Players:</label>
+              <select id="maxPlayers">
+                <option value="2">2 players</option>
+                <option value="4">4 players</option>
+                <option value="6" selected>6 players</option>
+                <option value="8">8 players</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="smallBlind">Small Blind:</label>
+              <input type="number" id="smallBlind" value="10" min="1" />
+            </div>
+            <div class="form-group">
+              <label for="bigBlind">Big Blind:</label>
+              <input type="number" id="bigBlind" value="20" min="2" />
+            </div>
+            <div class="form-actions">
+              <button type="submit">Create Room</button>
+              <button type="button" id="cancelCreateRoom">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Multiplayer Poker Game. All rights reserved.</p>
+    </footer>
+
+    <script src="js/poker.js"></script>
+  </body>
+</html>
